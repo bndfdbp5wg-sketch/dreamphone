@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dreamphone｜私人夢境</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #e9e4e2;
+      color: #292321;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .phone {
+      max-width: 390px;
+      min-height: 100vh;
+      margin: auto;
+      padding: 26px 22px;
+      background: #faf7f5;
+    }
+    .status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 38px;
+    }
+    h1 { font-size: 28px; margin-bottom: 6px; }
+    .sub { color: #897b77; font-size: 13px; }
+    .profile {
+      margin: 26px 0;
+      padding: 20px;
+      border-radius: 22px;
+      background: #f0e4e0;
+    }
+    .avatar {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: #d6b7ad;
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px 12px;
+      margin-top: 30px;
+    }
+    .app {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: center;
+      cursor: pointer;
+    }
+    .app-icon {
+      width: 62px; height: 62px;
+      margin: 0 auto 8px;
+      border-radius: 19px;
+      display: grid; place-items: center;
+      background: white;
+      box-shadow: 0 4px 12px #34201b12;
+      font-size: 27px;
+    }
+    .app small { font-size: 12px; }
+    .panel {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 20px;
+      background: white;
+    }
+    .panel button {
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 12px;
+      background: #ead8d2;
+      color: #382824;
+    }
+    .hidden { display: none; }
+    #reply { line-height: 1.8; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status"><span>1:09</span><span>●●● ▰</span></div>
+    <h1>Dreamphone</h1>
+    <div class="sub">PRIVATE WORLD · 你的秘密戀愛宇宙</div>
+
+    <section class="profile">
+      <div class="avatar">♡</div>
+      <div>我的夢角</div>
+      <h2 id="idol">田柾國</h2>
+      <div class="sub">關係：秘密曖昧中</div>
+    </section>
+
+    <h3>我的 APP</h3>
+    <section class="apps">
+      <button class="app" onclick="openApp('chat')">
+        <div class="app-icon">💬</div><small>私訊</small>
+      </button>
+      <button class="app" onclick="openApp('social')">
+        <div class="app-icon">📱</div><small>社群</small>
+      </button>
+      <button class="app" onclick="openApp('secret')">
+        <div class="app-icon">🔒</div><small>秘密事件</small>
+      </button>
+    </section>
+
+    <section id="chat" class="panel hidden">
+      <h3>💬 私人訊息</h3>
+      <p>他：今天有沒有想我？</p>
+      <button onclick="reply('想你')">想你</button>
+      <button onclick="reply('才沒有')">才沒有</button>
+      <p id="reply"></p>
+    </section>
+
+    <section id="social" class="panel hidden">
+      <h3>📱 社群動態</h3>
+      <p>熱門話題：#今天也想見到他</p>
+      <p>匿名粉絲：這兩個人的行程是不是太巧了？</p>
+      <button onclick="alert('已按讚 ♡')">♡ 按讚</button>
+    </section>
+
+    <section id="secret" class="panel hidden">
+      <h3>🔒 隱藏事件</h3>
+      <p>輸入你們的秘密暗號，看看會發生什麼。</p>
+      <input id="code" placeholder="輸入秘密暗號">
+      <button onclick="secret()">解鎖</button>
+      <p id="secretReply"></p>
+    </section>
+  </main>
+
+  <script>
+    function openApp(id) {
+      ['chat','social','secret'].forEach(name => {
+        document.getElementById(name).classList.toggle('hidden', name !== id);
+      });
+    }
+
+    function reply(word) {
+      const messages = {
+        '想你': '他：……我也是。其實剛剛就想傳訊息給你了。',
+        '才沒有': '他：真的？那我先不打擾你了……（五秒後又傳來一則訊息）'
+      };
+      document.getElementById('reply').textContent = messages[word];
+    }
+
+    function secret() {
+      const value = document.getElementById('code').value.trim();
+      document.getElementById('secretReply').textContent =
+        ['月亮','晚安','我們'].includes(value)
+        ? '🔓 隱藏事件已解鎖：他偷偷傳來一張只有你看得懂的照片。'
+        : '暗號不對，再想想你們之間的秘密。';
+    }
+  </script>
+</body>
+</html>
