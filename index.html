@@ -1,160 +1,62 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dreamphone｜私人夢境</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #e9e4e2;
-      color: #292321;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    .phone {
-      max-width: 390px;
-      min-height: 100vh;
-      margin: auto;
-      padding: 26px 22px;
-      background: #faf7f5;
-    }
-    .status {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      margin-bottom: 38px;
-    }
-    h1 { font-size: 28px; margin-bottom: 6px; }
-    .sub { color: #897b77; font-size: 13px; }
-    .profile {
-      margin: 26px 0;
-      padding: 20px;
-      border-radius: 22px;
-      background: #f0e4e0;
-    }
-    .avatar {
-      width: 58px; height: 58px;
-      border-radius: 50%;
-      display: grid; place-items: center;
-      background: #d6b7ad;
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
-    .apps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px 12px;
-      margin-top: 30px;
-    }
-    .app {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      text-align: center;
-      cursor: pointer;
-    }
-    .app-icon {
-      width: 62px; height: 62px;
-      margin: 0 auto 8px;
-      border-radius: 19px;
-      display: grid; place-items: center;
-      background: white;
-      box-shadow: 0 4px 12px #34201b12;
-      font-size: 27px;
-    }
-    .app small { font-size: 12px; }
-    .panel {
-      margin-top: 24px;
-      padding: 18px;
-      border-radius: 20px;
-      background: white;
-    }
-    .panel button {
-      padding: 10px 14px;
-      border: 0;
-      border-radius: 12px;
-      background: #ead8d2;
-      color: #382824;
-    }
-    .hidden { display: none; }
-    #reply { line-height: 1.8; white-space: pre-wrap; }
-  </style>
-</head>
-<body>
-  <main class="phone">
-    <div class="status"><span>1:09</span><span>●●● ▰</span></div>
-    <h1>Dreamphone</h1>
-    <div class="sub">PRIVATE WORLD · 你的秘密戀愛宇宙</div>
-
-    <section class="profile">
-      <div class="avatar">♡</div>
-      <div>我的夢角</div>
-      <h2 id="idol">田柾國</h2>
-      <div class="sub">關係：秘密曖昧中</div>
-    </section>
-
-    <h3>我的 APP</h3>
-    <section class="apps">
-      <button class="app" onclick="openApp('chat')">
-        <div class="app-icon">💬</div><small>私訊</small>
-      </button>
-      <button class="app" onclick="openApp('social')">
-        <div class="app-icon">📱</div><small>社群</small>
-      </button>
-      <button class="app" onclick="openApp('secret')">
-        <div class="app-icon">🔒</div><small>秘密事件</small>
-      </button>
-    </section>
-
-    <section id="chat" class="panel hidden">
-      <h3>💬 私人訊息</h3>
-      <p>他：今天有沒有想我？</p>
-      <button onclick="reply('想你')">想你</button>
-      <button onclick="reply('才沒有')">才沒有</button>
-      <p id="reply"></p>
-    </section>
-
-    <section id="social" class="panel hidden">
-      <h3>📱 社群動態</h3>
-      <p>熱門話題：#今天也想見到他</p>
-      <p>匿名粉絲：這兩個人的行程是不是太巧了？</p>
-      <button onclick="alert('已按讚 ♡')">♡ 按讚</button>
-    </section>
-
-    <section id="secret" class="panel hidden">
-      <h3>🔒 隱藏事件</h3>
-      <p>輸入你們的秘密暗號，看看會發生什麼。</p>
-      <input id="code" placeholder="輸入秘密暗號">
-      <button onclick="secret()">解鎖</button>
-      <p id="secretReply"></p>
-    </section>
-  </main>
-
-  <script>
-    function openApp(id) {
-      ['chat','social','secret'].forEach(name => {
-        document.getElementById(name).classList.toggle('hidden', name !== id);
-      });
-    }
-
-    function reply(word) {
-      const messages = {
-        '想你': '他：……我也是。其實剛剛就想傳訊息給你了。',
-        '才沒有': '他：真的？那我先不打擾你了……（五秒後又傳來一則訊息）'
-      };
-      document.getElementById('reply').textContent = messages[word];
-    }
-
-    function secret() {
-      const value = document.getElementById('code').value.trim();
-      document.getElementById('secretReply').textContent =
-        ['月亮','晚安','我們'].includes(value)
-        ? '🔓 隱藏事件已解鎖：他偷偷傳來一張只有你看得懂的照片。'
-        : '暗號不對，再想想你們之間的秘密。';
-    }
-  </script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f1ec"><title>夢女模擬器｜另一個世界</title>
+<style>
+:root{--bg:#f5f1ec;--paper:#fffdf9;--ink:#292620;--muted:#887f76;--line:#e7dfd6;--violet:#806b8e}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif}.app{max-width:480px;min-height:100dvh;margin:auto;background:var(--paper);position:relative;box-shadow:0 0 40px #00000008}.top{height:58px;position:sticky;top:0;background:#fffdf9ed;backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--line);z-index:2}.brand{font-size:11px;letter-spacing:.2em;color:var(--muted)}button,textarea,input{font:inherit}button{cursor:pointer}.screen{display:none;min-height:calc(100dvh - 58px);padding-bottom:85px}.screen.active{display:block}.hero{padding:30px 23px 24px;background:linear-gradient(145deg,#eee4f0,#f8f1e9)}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--muted)}h1{font-size:28px;letter-spacing:.06em;font-weight:500;margin:13px 0 10px}.hero p,.intro{font-size:12px;line-height:1.9;color:#6d655f;margin:0}.date{display:flex;justify-content:space-between;margin-top:22px;font-size:10px;color:#756d65}.section{padding:23px}.head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.head h2{font-size:14px;font-weight:600;margin:0;letter-spacing:.08em}.tiny{font-size:10px;color:var(--muted)}.card{border:1px solid var(--line);border-radius:14px;padding:17px;background:white;margin-bottom:11px}.card h3{font-size:14px;font-weight:500;margin:0 0 8px}.card p{font-size:12px;color:#756d65;line-height:1.85;margin:0 0 13px}.primary,.secondary,.choice{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:white;color:var(--ink);font-size:12px}.primary{background:var(--ink);color:white;border-color:var(--ink);width:100%}.secondary{background:transparent}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{border:1px solid var(--line);border-radius:13px;background:white;padding:14px;text-align:left;min-height:88px}.quick b{display:block;font-size:12px;font-weight:500}.quick span{display:block;font-size:20px;margin-bottom:10px;color:var(--violet)}.quick small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);display:flex;justify-content:space-around;background:#fffdf9ed;backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav button{background:none;border:0;color:#999087;font-size:10px;padding:4px;min-width:55px}.nav button span{display:block;font-size:19px;margin-bottom:3px}.nav button.active{color:var(--violet)}.page{padding:25px 23px 18px}.page h1{font-size:24px}.member{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#e7dce9,#f5e7dc);display:grid;place-items:center;color:#685b70;font-size:12px;flex-shrink:0}.mtext{flex:1;min-width:0}.mtext strong{font-size:13px;font-weight:500}.mtext p{font-size:10px;line-height:1.7;color:var(--muted);margin:5px 0}.meter{height:3px;background:#eee8e1;border-radius:5px;overflow:hidden}.meter i{height:100%;display:block;background:var(--violet)}.tag{font-size:9px;border:1px solid #e4d9e8;border-radius:20px;padding:4px 6px;color:var(--violet)}.art{height:220px;background:linear-gradient(180deg,#b8b6c9,#e5d6d3 65%,#f5f1ec);padding:18px;display:flex;align-items:flex-end;position:relative;color:white}.art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#322a3d80,transparent 70%)}.loc{position:relative;z-index:1;font-size:10px;letter-spacing:.15em}.time{position:absolute;right:17px;top:16px;background:#ffffffa8;color:#403747;padding:6px 9px;border-radius:20px;font-size:10px}.dialog{position:relative;margin:-17px 14px 0;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:20px 17px;z-index:1}.speaker{font-size:10px;letter-spacing:.15em;color:var(--violet);margin-bottom:10px}.dialog p{font-size:13px;line-height:2;white-space:pre-line;margin:0}.choices{padding:18px 14px}.choices h3{font-size:10px;letter-spacing:.14em;color:var(--muted);font-weight:500}.choice{display:block;width:100%;text-align:left;line-height:1.7;margin:8px 0;background:#fffdf9}.custom{padding:0 14px 20px}.custom label{display:block;font-size:10px;color:var(--muted);margin-bottom:8px}.customrow{display:flex;gap:7px}.custom input{min-width:0;flex:1;border:1px solid var(--line);border-radius:9px;padding:11px;font-size:12px}.custom button{background:var(--violet);color:white;border:0;border-radius:9px;padding:0 14px;font-size:12px}.log{padding:14px 0;border-bottom:1px solid var(--line)}.log strong{font-size:12px;font-weight:500}.log p{font-size:11px;line-height:1.8;color:var(--muted);margin:6px 0 0}.field{width:100%;border:1px solid var(--line);border-radius:10px;background:#fffdf9;padding:12px;font-size:12px;line-height:1.8;resize:vertical}.toast{position:fixed;z-index:10;bottom:90px;left:50%;transform:translateX(-50%);background:#292620;color:white;border-radius:30px;padding:10px 15px;font-size:11px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90%;text-align:center}.toast.show{opacity:1}.note{font-size:10px;line-height:1.8;color:#9b9288;margin-top:15px}
+</style></head>
+<body><div class="app">
+<header class="top"><div class="brand">ANOTHER WORLD · 夢境存檔</div><button class="secondary" style="border-radius:50%;padding:7px 10px" onclick="show('settings')">⌘</button></header>
+<main id="home" class="screen active">
+<section class="hero"><div class="eyebrow">YOUR STORY, YOUR PACE</div><h1>如果人生有另一條線。</h1><p>這不是一個必須抵達結局的故事。你可以靠近某個人，也可以誰都不選；可以探索異世界，也可以先把自己的日子過好。</p><div class="date"><span id="today"></span><span>存檔 01 ／ 未完待續</span></div></section>
+<section class="section"><div class="head"><h2>接著你的故事</h2><span class="tiny">CONTINUE</span></div><div class="card"><div class="eyebrow">CHAPTER 01</div><h3>不在行程表上的訪客</h3><p id="summary">一個普通的工作日，意外把你帶到了完全不可能出現的地方。先確認眼前的現實，再決定下一步。</p><button class="primary" onclick="show('story')">進入故事　→</button></div><div class="head" style="margin-top:25px"><h2>你的世界</h2><span class="tiny">QUICK ACCESS</span></div><div class="grid"><button class="quick" onclick="show('phone')"><span>▤</span><b>台灣手機</b><small>訊息、備忘錄與生活</small></button><button class="quick" onclick="show('members')"><span>◌</span><b>關係圖鑑</b><small>七個人，七種可能</small></button><button class="quick" onclick="show('archive')"><span>⌁</span><b>故事線偷窺簿</b><small>回看已發生的選擇</small></button><button class="quick" onclick="show('journal')"><span>✎</span><b>私人手記</b><small>把今天留給自己</small></button></div></section>
+</main>
+<main id="phone" class="screen"><div class="page"><div class="eyebrow">TAIWAN · PERSONAL DEVICE</div><h1>手機裡的日常</h1><p class="intro">回到台灣時，這裡是你的私人空間。世界另一端發生的事，也會留下痕跡。</p></div><section class="section" style="padding-top:0"><div class="card"><div class="head"><h2>訊息</h2><span class="tiny">MESSAGES</span></div><h3>好友群組</h3><p>「妳昨天不是說要早睡？」<br>「……我有躺在床上，四捨五入算早睡吧。」</p><button class="secondary" onclick="toast('這是示範訊息，更多對話會隨故事進度解鎖。')">查看訊息</button></div><div class="card"><div class="head"><h2>備忘錄</h2><span class="tiny">NOTES</span></div><textarea id="notes" class="field" rows="4" placeholder="記下地址、待辦，或突然冒出的小說靈感……"></textarea><button class="secondary" style="width:100%;margin-top:9px" onclick="saveField('notes')">儲存備忘錄</button></div><div class="card"><h3>生活狀態</h3><p>小說進度：靈感待命中<br>生活資金：尚未設定<br>所在世界：<span id="world">韓國</span></p><p>工作、寫作、存錢與休息都是你自己的事，不會因為認識誰就自動消失。</p></div></section></main>
+<main id="members" class="screen"><div class="page"><div class="eyebrow">RELATIONSHIP FILES</div><h1>七個人，七種可能</h1><p class="intro">好感不等於信任，信任也不等於愛情。關係會隨相處改變，沒有指定的攻略對象。</p></div><section class="section" style="padding-top:0" id="memberList"></section><div class="note" style="padding:0 23px 25px">本模擬器中的角色與互動屬於虛構故事演繹，不代表現實人物的私人生活或真實想法。</div></main>
+<main id="story" class="screen"><div class="art"><div class="time" id="time"></div><div class="loc" id="location"></div></div><section class="dialog"><div class="speaker" id="speaker"></div><p id="dialogue"></p></section><section class="choices"><h3>你打算怎麼做？</h3><div id="choiceList"></div></section><section class="custom"><label for="custom">也可以自己決定，不必照選項走</label><div class="customrow"><input id="custom" placeholder="輸入你想做的事……"><button onclick="customAction()">送出</button></div></section></main>
+<main id="archive" class="screen"><div class="page"><div class="eyebrow">BRANCH WATCHER</div><h1>故事線偷窺簿</h1><p class="intro">記錄已經發生的事件、你的選擇，以及選擇留下的影響。尚未解鎖的故事不會假裝已經發生。</p></div><section class="section" style="padding-top:0"><div id="logs"></div><button class="secondary" style="width:100%;margin-top:15px" onclick="clearLogs()">清除故事紀錄</button></section></main>
+<main id="journal" class="screen"><div class="page"><div class="eyebrow">PRIVATE JOURNAL</div><h1>只寫給自己的話</h1><p class="intro">不需要漂亮，也不必讓任何人理解。這一頁只屬於你。</p></div><section class="section" style="padding-top:0"><textarea id="journalText" class="field" rows="9" placeholder="今天發生了什麼？有沒有什麼話想留給明天的自己？"></textarea><button class="primary" style="margin-top:12px" onclick="saveField('journal')">保存手記</button><p class="note">手記保存在目前瀏覽器的本機儲存空間。清除瀏覽器資料可能會讓它消失。</p></section></main>
+<main id="settings" class="screen"><div class="page"><div class="eyebrow">PREFERENCES</div><h1>設定與存檔</h1><p class="intro">你的故事不必有終點，但值得留下記錄。</p></div><section class="section" style="padding-top:0"><div class="card"><h3>本機存檔</h3><p>目前進度、關係數值、故事紀錄和手記會保存在這台裝置的瀏覽器中。</p><button class="secondary" style="width:100%" onclick="exportSave()">匯出存檔備份</button></div><div class="card"><h3>重新開始</h3><p>清除本機故事進度、關係紀錄、備忘錄與手記。</p><button class="secondary" style="width:100%" onclick="resetAll()">重置所有資料</button></div><p class="note">這是可在 GitHub Pages 運行的互動原型。真正的 AI 即時生成需要安全的後端服務；目前不會假裝已連接 AI。</p></section></main>
+<nav class="nav"><button class="active" data-id="home" onclick="show('home')"><span>⌂</span>首頁</button><button data-id="phone" onclick="show('phone')"><span>▤</span>手機</button><button data-id="story" onclick="show('story')"><span>✧</span>故事</button><button data-id="members" onclick="show('members')"><span>◌</span>關係</button><button data-id="archive" onclick="show('archive')"><span>⌁</span>紀錄</button></nav><div id="toast" class="toast"></div></div>
+<script>
+const baseMembers=[
+['rm','RM','金南俊','理性觀察者','習慣把事情想清楚，也可能想得太多。'],
+['jin','JIN','金碩珍','氣氛掌控者','會用玩笑打破僵局，也比看起來更敏銳。'],
+['suga','SUGA','閔玧其','界線與現實派','不愛拐彎抹角，尊重彼此的空間。'],
+['hope','j-hope','鄭號錫','行動與秩序派','喜歡把混亂整理好，不代表事事都能掌控。'],
+['jimin','JIMIN','朴智旻','溫柔的試探者','看似溫和，熟悉之後偶爾會故意逗你。'],
+['v','V','金泰亨','隨性好奇派','不一定照著預期行動，對有趣的事有自己的理由。'],
+['jk','JUNGKOOK','田柾國','直接的行動派','不喜歡被定義，遇到事情更傾向自己去做。']];
+const scenes=[
+{title:'不在行程表上的訪客',loc:'SEOUL · UNKNOWN ADDRESS',time:'首爾 · 10:52',speaker:'旁白',text:'你睜開眼睛時，第一個念頭不是尖叫，而是：我昨晚到底睡了幾個小時？\\n\\n陌生的天花板、陌生的房間，還有手機上完全不合理的定位。你明明記得自己前一秒還在台灣，對著寫到一半的小說發愁。\\n\\n你坐起來，先確認自己沒有受傷。房門外傳來一點動靜。好，至少這不是一座荒島——目前看來是。',choices:[['先看手機：定位、時間、訊號，一樣一樣確認。',1,0,1],['留在原地觀察環境，確認有沒有危險。',2,0,1],['走到門邊，先弄清楚外面是誰。',3,1,0],['試著用最直接的方法回到台灣。',4,0,0]]},
+{title:'先確認現實',loc:'SEOUL · A STRANGE ROOM',time:'首爾 · 10:54',speaker:'旁白',text:'手機還能開。訊號有一格，日期也沒有亂掉，唯獨定位固執地顯示著首爾。你截圖、記下時間，又打開地圖。地圖沒有因為你的世界觀崩塌而提供任何解釋，甚至貼心地推薦附近咖啡店。\\n\\n門外的人停了一下，像是注意到房間裡有動靜。',choices:[['把手機握好，先開口詢問對方是誰。',3,0,1],['傳訊息給台灣的朋友，留下平安的證據。',5,0,1],['打開地圖，確認附近道路與出口。',2,0,1],['深呼吸，先把這件事當成能解決的問題。',6,0,1]]},
+{title:'先確認再說',loc:'SEOUL · QUIET ROOM',time:'首爾 · 10:55',speaker:'旁白',text:'你沒有立刻衝出去。房間裡看得見的出口、窗戶、自己的物品，你一項一項確認。慌張也不會自動長出答案。至少先確定自己在哪裡、能不能離開，以及遇到最糟的情況要怎麼辦。\\n\\n門外傳來一個男人的聲音，語氣帶著一點遲疑。',choices:[['回答一聲，讓對方知道自己醒著。',3,0,1],['先問對方能不能站在門外說話。',3,0,2],['找好手機和隨身物品，再走出去。',1,0,1],['直接說明自己不知道為什麼會在這裡。',3,1,0]]},
+{title:'第一個問題',loc:'SEOUL · HALLWAY',time:'首爾 · 10:57',speaker:'朴智旻',text:'門外的人看見你時，明顯愣了一下。他先看了看你，又看向房間，像是在確認眼前的情況並不是自己弄錯了。\\n\\n「妳還好嗎？有沒有受傷？」他沒有立刻靠近，只是留在一個不會讓你感到被逼迫的距離。\\n\\n你認出了那張臉。這件事沒有讓現實變得比較合理，反而讓你的腦袋短暫地空白了一秒。',choices:[['先確認眼前的人真的是朴智旻，再問自己為什麼在這裡。',7,1,0],['保持距離，坦白說自己也不知道怎麼來的。',8,0,2],['問他現在的地點，並確認能不能自行離開。',9,0,2],['用一句玩笑掩飾腦袋當機，看看對方反應。',10,2,0]]},
+{title:'回程測試',loc:'SEOUL · UNKNOWN ADDRESS',time:'首爾 · 10:58',speaker:'旁白',text:'你試了幾種看起來合理、實際上完全沒有根據的方法。閉眼、重新睜眼、確認門牌，甚至認真考慮要不要再躺回去。什麼都沒有發生。你仍然在首爾。\\n\\n好消息是，這至少排除了「剛剛只是看錯」的可能。壞消息是，問題正式升級成了你完全沒有攻略的類型。',choices:[['停止亂試，先找一個能說明現況的人。',3,0,1],['把每次嘗試的時間與結果記下來。',1,0,1],['先去安全、有人流的地方，避免把自己困住。',9,0,2],['承認目前沒有答案，先處理眼前生活需求。',6,0,1]]},
+{title:'留一條線回去',loc:'SEOUL · PHONE SCREEN',time:'首爾 · 11:00',speaker:'訊息草稿',text:'你打開和朋友的對話框，打了幾個字，又刪掉。總不能直接傳一句「我現在人在首爾，請問這算曠職嗎」吧。\\n\\n最後，你決定先留下一句簡單、能讓對方知道你平安的訊息。至於怎麼解釋，等你自己弄清楚一點再說。至少，台灣那邊還有一條線連著你。',choices:[['傳出簡短報平安的訊息。',6,0,2],['先不傳，避免在沒有答案時讓朋友擔心。',6,0,0],['把這件事寫進備忘錄，等有更多資訊再說。',1,0,1],['直接打電話，聽熟悉的聲音確認自己清醒。',6,0,1]]},
+{title:'先活過今天',loc:'SEOUL · LATE MORNING',time:'首爾 · 11:02',speaker:'旁白',text:'不管這件事有多離譜，肚子餓、需要交通、需要住處這些現實問題都沒有因此消失。你開始把事情拆小：先確認安全，再弄清楚附近環境，接著找辦法聯絡熟悉的人。至於穿越、夢境，或者某種你完全不懂的規則——可以等你不會因為沒吃早餐而脾氣變差時再研究。\\n\\n這是你的生活。即使世界突然換了一張地圖，也不必把所有主導權交出去。',choices:[['向朴智旻詢問附近交通與可以自行活動的範圍。',9,1,1],['先整理一份當天的生存清單。',11,0,1],['詢問能否借用網路，查找回台灣的方式。',8,0,1],['先休息一下，讓自己冷靜後再決定。',11,0,0]]},
+{title:'確認不是夢',loc:'SEOUL · HALLWAY',time:'首爾 · 11:04',speaker:'朴智旻',text:'「妳現在看起來像是有很多問題想問。」他停了停，沒有催促你回答自己的問題。「可以慢慢來。先告訴我，有沒有哪裡不舒服？」\\n\\n他的態度很正常，正常得讓這場荒唐的相遇更難解釋。你努力把那些過於吵鬧的想法往後推，先挑出一個最實際的問題。',choices:[['先回答自己沒受傷，再詢問現在的地址。',9,0,2],['坦白自己很混亂，但不想被當成需要照顧的小孩。',8,0,2],['問他能否借用手機網路查地圖。',9,0,1],['反問他：如果你在我這個位置，你會先做什麼？',10,1,1]]},
+{title:'界線與選擇',loc:'SEOUL · FRONT DOOR',time:'首爾 · 11:06',speaker:'朴智旻',text:'聽完你的問題，他點點頭，告訴你附近的路名和幾個容易辨認的地標，也把地址寫進你的手機。\\n\\n「如果妳想自己出去看看，可以。」他指了指門外，「先走附近就好。不知道路的話，傳訊息給我。當然，妳也可以選擇先待在這裡。」\\n\\n他把外套放在旁邊，沒有直接替你披上。「外面有點涼，妳自己決定要不要穿。」',choices:[['穿上外套，自己出去確認附近環境。',12,1,1],['先問清楚回來的路線與門禁，再出門。',12,0,2],['婉拒外套，表示自己會注意保暖。',12,0,1],['先留在屋內，把想問的問題整理好。',11,0,1]]},
+{title:'把緊張變成玩笑',loc:'SEOUL · FRONT DOOR',time:'首爾 · 11:07',speaker:'朴智旻',text:'你試著用一句玩笑把空氣裡的緊繃感撥開。他先是眨了下眼，隨即笑了一聲。\\n\\n「原來妳還有心情開玩笑。」他說，「那應該還好——我是說，至少現在看起來是。」\\n\\n他沒有追問你為什麼會出現在這裡，只提醒你，如果不想回答某些問題，也可以直接說。',choices:[['順勢問他附近有什麼地方可以去。',9,1,0],['告訴他自己需要一點時間消化這件事。',8,0,2],['反過來問他，平常會讓陌生人待在家裡嗎？',9,1,1],['先停下玩笑，認真討論接下來的安排。',11,0,2]]},
+{title:'給自己一份清單',loc:'SEOUL · QUIET CORNER',time:'首爾 · 11:10',speaker:'旁白',text:'你把接下來要做的事列成幾條：確認地址、弄清楚交通、找網路、確認自己有沒有辦法回去，以及準備一個不必依賴別人的備案。清單不能解釋為什麼你會在韓國，但至少能讓今天不至於完全失控。\\n\\n窗外的光線慢慢變亮。你忽然意識到，接下來的生活也許不只是一場短暫的意外。',choices:[['整理好東西，出門探索附近街區。',12,0,1],['先找網路，查交通與住宿選項。',12,0,1],['向朴智旻確認可以聯絡他的方式。',9,1,1],['把第一天的經過記進私人手記。',12,0,0]]},
+{title:'首爾的第一段路',loc:'SEOUL · RESIDENTIAL STREET',time:'首爾 · 11:18',speaker:'旁白',text:'你終於走到街上。空氣比想像中冷一點，街道安靜，路口有便利商店，手機地圖上的藍點仍然頑固地待在首爾。\\n\\n這不是夢境的證據，也不是你已經適應的證據。它只代表你真的踏出了第一步。口袋裡的手機很安靜。接下來要往哪裡走，現在由你決定。',choices:[['沿著附近街道走一圈，先熟悉環境。',13,0,1],['去便利商店買水，順便確認支付方式。',13,0,1],['找間咖啡店坐下，整理目前掌握的資訊。',13,0,1],['傳訊息告訴朴智旻自己已經出門、目前平安。',13,1,1]]},
+{title:'下一步，由你決定',loc:'SEOUL · YOUR OWN ROUTE',time:'首爾 · 11:30',speaker:'旁白',text:'首爾沒有因為你出現在這裡就改變運轉。行人趕著上班，店家準備開門，紅綠燈照常切換。\\n\\n你仍然不知道自己為什麼來到這裡，也不知道能不能隨時回台灣。但至少現在，你有地址、有手機、有一個可以聯絡的人，還有選擇下一步的自由。故事沒有替你決定要愛上誰。你可以先探索，也可以把生活安頓好；可以和朴智旻繼續相處，也可以慢慢認識其他人。',choices:[['繼續探索首爾，找出適合自己停留的地方。',13,0,1],['回去找朴智旻，討論下一步安排。',9,1,1],['打開手機，研究回台灣的可能方法。',5,0,1],['暫時不追答案，先把今天過好。',11,0,1]]}
+];
+let state={scene:0,history:[],world:'韓國',members:baseMembers.map(m=>({id:m[0],name:m[1],full:m[2],style:m[3],desc:m[4],aff:0,trust:0})),notes:'',journal:''};
+try{const s=JSON.parse(localStorage.getItem('anotherWorldSave')||'null');if(s)state={...state,...s}}catch(e){}
+function save(){localStorage.setItem('anotherWorldSave',JSON.stringify(state))}
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.id===id));if(id==='story')renderStory();if(id==='members')renderMembers();if(id==='archive')renderLogs();if(id==='phone'){document.getElementById('notes').value=state.notes||'';document.getElementById('world').textContent=state.world||'台灣'}if(id==='journal')document.getElementById('journalText').value=state.journal||'';window.scrollTo(0,0)}
+function renderStory(){let s=scenes[Math.min(state.scene,scenes.length-1)];document.getElementById('time').textContent=s.time;document.getElementById('location').textContent=s.loc;document.getElementById('speaker').textContent=s.speaker+' · '+s.title;document.getElementById('dialogue').textContent=s.text;document.getElementById('choiceList').innerHTML=s.choices.map((c,i)=>`<button class="choice" onclick="choose(${i})">${i+1}. ${esc(c[0])}</button>`).join('')}
+function choose(i){let s=scenes[Math.min(state.scene,scenes.length-1)],c=s.choices[i];state.history.push({title:s.title,choice:c[0],time:s.time});let m=state.members.find(x=>x.id==='jimin');m.aff=Math.min(100,m.aff+c[2]);m.trust=Math.min(100,m.trust+c[3]);state.scene=c[1];state.world='韓國';save();renderStory();renderLogs();document.getElementById('summary').textContent='你目前在首爾，故事已記錄 '+state.history.length+' 個選擇。接下來仍由你決定。'}
+function customAction(){let el=document.getElementById('custom'),v=el.value.trim();if(!v)return;let s=scenes[Math.min(state.scene,scenes.length-1)];state.history.push({title:s.title,choice:'自訂行動：'+v,time:s.time});state.scene=Math.min(state.scene+1,scenes.length-1);state.members.find(x=>x.id==='jimin').trust=Math.min(100,state.members.find(x=>x.id==='jimin').trust+1);state.world='韓國';save();el.value='';renderStory();renderLogs();toast('已記錄你的自訂行動。這個原型會推進事件，尚未連接 AI 自由對話。')}
+function renderMembers(){document.getElementById('memberList').innerHTML=state.members.map(m=>`<div class="member"><div class="avatar">${esc(m.name==='j-hope'?'HOPE':m.name==='JUNGKOOK'?'JK':m.name)}</div><div class="mtext"><strong>${esc(m.name)} <span style="color:#a69c92;font-size:10px">${esc(m.full)}</span></strong><p>${esc(m.style)} · ${esc(m.desc)}</p><div class="meter"><i style="width:${m.aff}%"></i></div><p>好感 ${m.aff} ／ 信任 ${m.trust}</p></div><span class="tag">${m.aff>=60?'親近':m.trust>=20?'建立中':'初識'}</span></div>`).join('')}
+function renderLogs(){let el=document.getElementById('logs');el.innerHTML=state.history.length?[...state.history].reverse().map(h=>`<div class="log"><strong>${esc(h.title)} <span class="tiny">／ ${esc(h.time||'未知時間')}</span></strong><p>你的選擇：${esc(h.choice)}</p></div>`).join(''):'<div class="intro" style="text-align:center;padding:25px 0">還沒有故事紀錄。<br>你的第一個選擇會從這裡留下痕跡。</div>'}
+function saveField(which){state[which]=document.getElementById(which==='notes'?'notes':'journalText').value;save();toast(which==='notes'?'備忘錄已儲存。':'手記已保存。')}
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+function clearLogs(){if(!confirm('確定清除所有故事選擇紀錄？'))return;state.history=[];save();renderLogs();toast('故事紀錄已清除。')}
+function exportSave(){let b=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='another-world-save.json';a.click();URL.revokeObjectURL(u)}
+function resetAll(){if(!confirm('確定重置所有資料？故事、關係、備忘錄與手記都會清除。'))return;localStorage.removeItem('anotherWorldSave');state={scene:0,history:[],world:'韓國',members:baseMembers.map(m=>({id:m[0],name:m[1],full:m[2],style:m[3],desc:m[4],aff:0,trust:0})),notes:'',journal:''};save();renderStory();renderMembers();renderLogs();show('home');toast('已重新開始。')}
+let d=new Date();document.getElementById('today').textContent=`${d.getFullYear()} · ${String(d.getMonth()+1).padStart(2,'0')} · ${String(d.getDate()).padStart(2,'0')}`;renderStory();renderMembers();renderLogs();save();
+</script></div></body></html>
